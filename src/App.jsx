@@ -6,12 +6,12 @@ export function App() {
   const [src, setSrc] = useState('');
   function updateSrc() {
     const newSrc = window.innerWidth > 768
-      ? 'src/assets/images/pattern-divider-desktop.svg'
-      : 'src/assets/images/pattern-divider-mobile.svg';
+      ? 'public/images/pattern-divider-desktop.svg'
+      : 'public/images/pattern-divider-mobile.svg';
     setSrc(newSrc);
   }
 
-  useEffect(() => {    
+  useEffect(() => {
     updateSrc();
     window.addEventListener('resize', updateSrc);
     return () => {
@@ -25,7 +25,7 @@ export function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const useFetch = useCallback((url) =>{
+  const useFetch = useCallback((url) => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => setData(data))
@@ -54,7 +54,7 @@ export function App() {
       </p>
       <img src={src} alt="mobile" className="fm-advice-divider-img" />
       <button onClick={handleRandomizeAdvice} className='fm-advice-randomize-button'>
-        <img src="src/assets/images/icon-dice.svg" alt="dice icon" />
+        <img src="public/images/icon-dice.svg" alt="dice icon" />
       </button>
     </article>
   )
