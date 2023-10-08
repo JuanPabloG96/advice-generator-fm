@@ -6,8 +6,8 @@ export function App() {
   const [src, setSrc] = useState('');
   function updateSrc() {
     const newSrc = window.innerWidth > 768
-      ? 'public/images/pattern-divider-desktop.svg'
-      : 'public/images/pattern-divider-mobile.svg';
+      ? 'images/pattern-divider-desktop.svg'
+      : 'images/pattern-divider-mobile.svg';
     setSrc(newSrc);
   }
 
@@ -54,7 +54,7 @@ export function App() {
       </p>
       <img src={src} alt="mobile" className="fm-advice-divider-img" />
       <button onClick={handleRandomizeAdvice} className='fm-advice-randomize-button'>
-        <img src="public/images/icon-dice.svg" alt="dice icon" />
+        <img src="images/icon-dice.svg" alt="dice icon" />
       </button>
     </article>
   )
